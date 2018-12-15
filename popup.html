@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div,
+        img {
+            display: inline-block;
+        }
+        img {
+            margin: 0px 8px;
+            width: 20px
+        }
+        img:last-of-type {
+            float: right;
+        }
+        h1 {
+            margin: 0 0 5px 0;
+            text-align: center; 
+        }
+        #main {
+            width: 180px;
+        }
+        #slide {
+            background-color: grey;
+            width: 110px;
+            height: 3px;
+            position: absolute;
+            margin: 8px 0px;
+        }
+        #node {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            transform: translate(0px, -5px);
+            position: relative;
+        }
+        #node.node-hold {
+            background-color: #6d2981;
+            border: 2px solid #aaa;
+            width: 12px;
+            height: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Brightness</h1>
+        <img src="moon.png">
+        <div id="slide">
+            <div id="node" draggable="false"></div>
+        </div>
+        <img src="sun.png">
+    </div>
+    <script src="jquery-3.3.1.slim.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
