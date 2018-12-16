@@ -2,7 +2,7 @@
 $(document).ready(function() {
     let nightShadeOverlay = $('<div id="nightShadeOverlay"></div>'),
         bright = 0,
-        dark = 0.3,
+        dark = 0.99,
         brightness;
     
     // add styling to tint the overlay element

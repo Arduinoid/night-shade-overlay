@@ -1,6 +1,6 @@
 {
     "name": "Night Shade Overlay",
-    "version": "0.1",
+    "version": "0.3",
     "author": "Jonathon Pinnow",
     "description": "An overlay to help tone down the brightness of web pages that have brighter color palettes.",
     "manifest_version": 2,

@@ -9,16 +9,22 @@ slider.on('mousedown', function() {
         let value = slider.val();
         sendActiveTabMessage("change_shade", value);
     })
+}).on('change', function() {
+    sendActiveTabMessage("change_shade", $(this).val());
+})
+
+main.on('mouseup', function() {
+    main.off('mousemove');
 })
 
 moon.click(function() {
-    console.log('moon clicked');
+    slider.val(99);
     // send message to active tab
     sendActiveTabMessage("moon_clicked")
 })
 
 sun.click(function() {
-    console.log('sun clicked');
+    slider.val(0);
     // send message to active tab
     sendActiveTabMessage("sun_clicked");
 })
