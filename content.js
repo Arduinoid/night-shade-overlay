@@ -23,11 +23,21 @@ $(document).ready(function() {
 
     chrome.runtime.onMessage.addListener(
         function(request, sender, sendResponse) {
-            if (request.message === 'moon_clicked') {
-                brightness = dark;
-            }
-            else if (request.message === 'sun_clicked') {
-                brightness = bright;
+            let message = request.message;
+            switch (message) {
+                case 'moon_clicked':
+                    brightness = dark;
+                    break;
+            
+                case 'sun_clicked':
+                    brightness = bright;
+                    break;
+
+                case 'change_shade':
+                    let inputValue = parseInt(request.value),
+                        mappedValue = inputValue * 0.01;
+                    brightness = mappedValue;
+                    break;
             }
             nightShadeOverlay.css('background-color', `rgba(0,0,0,${brightness})`);
         }
